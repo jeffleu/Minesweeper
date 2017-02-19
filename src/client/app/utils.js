@@ -21,9 +21,7 @@ export const createBoard = (height, width, numMines) => {
   }
   
   // Place numbers around mines
-  board = placeNumbers(board);
-  
-  return board;
+  return placeNumbers(board);
 };
 
 const placeMine = (board) => {
@@ -36,11 +34,9 @@ const placeMine = (board) => {
   }
   
   // Place mine on random coordinate
-  const randomIndex = Math.floor(Math.random() * blankCoordinates.length);
-  const randomCoordinate = blankCoordinates[randomIndex];
-  const randomRow = randomCoordinate[0];
-  const randomCol = randomCoordinate[1];
-  board[randomRow][randomCol].value = 'M';
+  const index = Math.floor(Math.random() * blankCoordinates.length);
+  const coord = blankCoordinates[index];
+  board[coord[0]][coord[1]].value = 'M';
   return board;
 };
 
@@ -52,25 +48,21 @@ const placeNumbers = (board) => {
       }
     }
   }
-  
   return board;
 };
   
 const getNumMinesAroundCell = (board, r, c) => {
   let mineCount = 0;
   
-  // Count number of mines in row above
   if (board[r - 1]) {
     if (board[r - 1][c - 1] && board[r - 1][c - 1].value === 'M') mineCount++;
     if (board[r - 1][c] && board[r - 1][c].value === 'M') mineCount++;
     if (board[r - 1][c + 1] && board[r - 1][c + 1].value === 'M') mineCount++;
   }
-  
-  // Count number of mines in same row
+
   if (board[r][c - 1] && board[r][c - 1].value === 'M') mineCount++;
   if (board[r][c + 1] && board[r][c + 1].value === 'M') mineCount++;
   
-  // Count number of mines in row below
   if (board[r + 1]) {
     if (board[r + 1][c - 1] && board[r + 1][c - 1].value === 'M') mineCount++;
     if (board[r + 1][c] && board[r + 1][c].value === 'M') mineCount++;
@@ -161,32 +153,6 @@ export const getBombCoordinates = (board) => {
 };
 
 export const playSound = (sound) => {
-  if (sound === 'click') {
-    const click = document.querySelector('#clickSound');
-    click.play();
-  } else if (sound === 'bomb') {
-    const bomb = document.querySelector('#bombSound');
-    bomb.play();
-  }
+  const audio = document.querySelector(`#${sound}Sound`);
+  audio.play();
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
