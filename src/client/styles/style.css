@@ -1,0 +1,151 @@
+body {
+  font-family: 'Lucida Sans Unicode';
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+table {
+  margin: 0 auto;
+}
+
+td {
+  padding: 0;
+  border-style: outset;
+  transition: all 0.5s;
+}
+
+.clicked {
+  border-style: inset;
+  transition: all 0.5s;
+}
+
+.buttons {
+  margin: 0 auto;
+  display: flex;
+  width: 500px;
+}
+
+.button{
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 10px 0px 20px 0px;
+  display: block;
+  height: 10px;
+  width: 100px;
+  
+  cursor:pointer;
+  font-size:15px;
+  color:#F0F0F0;
+  border-radius:10px;
+  border-bottom:4px solid #0045A6;
+  box-shadow: 6px 6px 6px #999;
+  
+  -webkit-user-select: none;        
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  
+  background: -webkit-linear-gradient(#00C8F8, #0067F7);
+    background: -o-linear-gradient(#00C8F8, #0067F7);
+    background: -moz-linear-gradient(#00C8F8, #0067F7);
+    background: linear-gradient(#00C8F8, #0067F7);
+  
+  -webkit-transition: background 0.05s linear;  
+    -moz-transition: background 0.05s linear;  
+    -o-transition: background 0.05s linear;  
+    transition: background 0.05s linear;
+  
+  background-size:1px 200px;
+  
+  transition: all .05s linear;
+}
+
+.button:hover{
+  background-position:100px;
+}
+
+.button:active {
+  box-shadow: 2px 2px 2px #777;
+  border-bottom:1px solid #0045A6;
+  transform: translateY(3px);
+}
+
+/* .button {
+  background-color: #303030;
+  color: #50C8FF;
+  height: 30px;
+  width: 115px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-bottom: 25px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+.button:hover {
+  background-color: #50C8FF;
+  color: #303030;
+  transition: background-color 0.5s, color 0.5s;
+} */
+
+.cell {
+  height: 20px;
+  width: 20px;
+  background-color: #BFBFBF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cell-hide {
+  height: 20px;
+  width: 20px;
+  background-color: #BFBFBF;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.cell-hide:hover {
+  background-color: #9E9E9E;
+  transition: all 0.5s;
+}
+
+.color-1 { color: #4286f4; }
+.color-2 { color: green; }
+.color-3 { color: red; }
+.color-4 { color: blue; }
+.color-5 { color: #820000; }
+
+.bomb {
+  padding-top: 5px;
+  height: 15px;
+  width: 15px;
+  content:url(http://www.iconeasy.com/icon/png/Movie%20%26%20TV/Danger%20Mouse/Bomb.png);
+}
+
+.flag {
+  height: 15px;
+  width: 15px;
+  content:url(http://www.freepsdfile.com/wp-content/uploads/2012/01/Red-Flag-Icon-PSD.png);
+}
+
+.message {
+  text-align: center;
+  margin-top: 15px;
+}
